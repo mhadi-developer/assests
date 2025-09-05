@@ -20,54 +20,37 @@ $(document).ready(function(){
 });
 
 
-  document.addEventListener('DOMContentLoaded', function() {
-    const gridElem = document.querySelector('.grid');
+/* ****************************isotopes++++++++++++++++++++++ */
 
-    imagesLoaded(gridElem, function() {
-      // init Isotope
-      const iso = new Isotope(gridElem, {
-        itemSelector: '.grid-item',
-        percentPosition: true,
-        masonry: { columnWidth: '.grid-sizer' }
-      });
 
-      // init lightGallery
-      const lgInstance = lightGallery(gridElem, {
-        selector: 'a',
-        plugins: [lgThumbnail, lgZoom],
-        speed: 400
-      });
+const grid = document.querySelector('.grid');
 
-      // filter links (only inside .gallery-filters)
-      document.querySelector('.gallery-filters').addEventListener('click', function(e) {
-        if (!e.target.matches('a')) return;
-        e.preventDefault(); // prevent jump
-        const filter = e.target.getAttribute('data-filter');
-        iso.arrange({ filter: filter });
-      });
-
-      // refresh lightGallery when items are filtered
-      iso.on('arrangeComplete', function() {
-        lgInstance.refresh();
-      });
-    });
+  // Init Isotope
+  const iso = new Isotope(grid, {
+    itemSelector: '.grid-item',
+    percentPosition: true,
+    layoutMode: 'masonry',
+    masonry: { columnWidth: '.grid-sizer' },
+    getSortData: {
+      title: '[data-title]',
+      price: '[data-price] parseInt'
+    }
   });
-  const lgInstance = lightGallery(gridElem, {
-  selector: '.grid-item a', // ✅ only anchors inside grid items
-  plugins: [lgThumbnail, lgZoom],
-  speed: 400
+
+  // Layout after each image loads
+  imagesLoaded(grid, () => iso.layout());
+
+  // Init LightGallery on the grid (so all <a> inside work)
+  lightGallery(grid, {
+    selector: 'a', // every anchor in grid
+    plugins: [lgZoom, lgThumbnail],
+    speed: 400
+  });
+ 
+              
+   /* ********************************8 BEFORE AND AFTER SLIDER ******************************* */ 
+
+
+$(function(){
+  $("#container1").twentytwenty();
 });
-document.querySelector('.gallery-filters').addEventListener('click', function(e) {
-  if (!e.target.matches('a')) return;
-  e.preventDefault(); // stop navigation
-  const filter = e.target.getAttribute('data-filter');
-  iso.arrange({ filter });
-
-  // toggle active class
-  document.querySelectorAll('.gallery-filters a').forEach(link => link.classList.remove('active'));
-  e.target.classList.add('active');
-});
-
-
-
-

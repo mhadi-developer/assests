@@ -645,6 +645,26 @@ color: var(--theme-colour-primary);
 font-weight: bolder;
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+/*new changes on active nav and tabs*/
+ .nav-pills .nav-link.active, .nav-pills .show>.nav-link
+ {
+    fill: white;
+    color: var(--bs-nav-pills-link-active-color);
+    background-color: var(--bs-nav-pills-link-active-bg);
+}
+.nav-pills .nav-item .nav-link.active, .nav-pills .show>.nav-link .st-blue-box{
+  background-color: #0cb8b6;
+}
+ .nav-pills .show>.nav-link .st-red-box{
+  background-color: red;
+} */
+
+.nav.nav-pills li.nav-link.active,  .show>.st-red-box{
+  color: white;
+  background-color: red;
+}
+
+
  .stay-connected{
   position: relative;
  }
@@ -764,32 +784,54 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     }
 
   }
-  .gallery-filters {
-  margin-bottom: 1rem;
-  text-align: center;
+
+  .results{
+    background-image: url(../img/poster/before-after-bg.jpg);
+  }
+  .twentytwenty-overlay {
+ 
+    transition-property:all;
+    background: none;
+     z-index:1;
+}
+.twentytwenty-overlay:hover{
+  background: none;
+}
+.twentytwenty-before , .twentytwenty-after {
+  border: 20px solid ghostwhite;
+  transition: all  ease;
+}
+  @media (min-width:1400px){
+     .twentytwenty-container {
+    left: 10%;
+  }
+    
+  }
+  /* From large desktop/laptop down to tablet */
+@media (min-width: 992px){
+  .twentytwenty-container {
+    left: 20%;
+}
 }
 
-.gallery-filters a {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  margin: 0 0.25rem;
-  text-decoration: none;
-  color: #333;
-  background: #f4f4f4;
-  border-radius: 4px;
-  transition: all 1s ease
-}
-
-.gallery-filters a:hover {
-  background: #333;
-  color: #fff;
-}
-
-.gallery-filters a.active {
-  background: #007bff;
-  color: #fff;
-}
 
 
+  /* *****************ISOTOPE******************* */
 
-   
+    .controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .controls button { padding: 8px 12px; border: 1px solid #ddd; background: #fff; border-radius: 8px; cursor: pointer; }
+    .controls button.is-checked { border-color: #111; font-weight: 600; }
+    .grid { margin: 0 auto; }
+    /* Masonry: use a sizer so columns are consistent */
+    .grid-sizer, .grid-item { width: 33.333%; }
+    @media (max-width: 900px) { .grid-sizer, .grid-item { width: 50%; } }
+    @media (max-width: 520px) { .grid-sizer, .grid-item { width: 100%; } }
+
+    .grid-item { padding: var(--gap); box-sizing: border-box; }
+    .card { background: #fff; border: 1px solid #eee; border-radius: 12px; overflow: hidden; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+    .card img { width: 100%; height: 180px; object-fit: cover; display: block; }
+    .card .meta { padding: 10px 12px 12px; }
+    .title { margin: 0 0 4px; font-size: 16px; }
+    .tags { opacity: .7; font-size: 12px; }
+
+
