@@ -663,6 +663,11 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   color: white;
   background-color: red;
 }
+@media (max-width: 576px) {
+ .doctor-list-wrapper .owl-carousel-wrapper .item .doctor-profile{
+    width: 100% !important;
+  }
+}
 
 
  .stay-connected{
