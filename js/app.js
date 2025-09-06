@@ -54,3 +54,4 @@ const grid = document.querySelector('.grid');
 $(function(){
   $("#container1").twentytwenty();
 });
+

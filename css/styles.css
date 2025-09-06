@@ -760,6 +760,12 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 .owl-carousel-wrapper .owl-nav .owl-next:active {
   color: var(--theme-colour-primary) !important;
 }
+@media (max-width: 576px){
+  .owl-carousel-wrapper{
+    padding: 0;
+    transition: all 3s ease;
+  }
+}
 @media (max-width: 576px) {
   .owl-carousel .owl-nav .owl-prev,
   .owl-carousel .owl-nav .owl-next {
@@ -774,7 +780,7 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     @media (max-width: 769px) {
     .departments-faculty .nav{
       overflow-x: scroll;
-     gap: 70px;
+     gap: 75px;
     }
 }
   @media (max-width: 769px) {
@@ -834,4 +840,90 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     .title { margin: 0 0 4px; font-size: 16px; }
     .tags { opacity: .7; font-size: 12px; }
 
+/* ************************ Doctor Information linked page *******************  */
+
+
+.doctor-information-wrapper div .doctor-specialist{
+  font-size: 16px; 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    width: calc(50%);
+    list-style: none;
+ 
+}
+.doctor-information-wrapper div .doctor-specialist span{
+  color: var(--theme-colour-primary);
+  font-weight: bold;
+}
+.doctor-information-wrapper div .contanct-info-wrapper{
+  background-color: #f9fafc;
+  padding: 30px 20px;
+}
+.doctor-information-wrapper div .contanct-info-wrapper .contanct-info-border{
+  border: 1px solid var(--theme-colour-primary);
+   padding: 30px 20px
+
+}
+.doctor-information-wrapper div .contanct-info-wrapper h4{
+  color: var(--theme-colour-primary);
+  font-size: 24px;
+  margin: 12px;
+}
+.doctor-information-wrapper div .contanct-info-wrapper .Contanct-info-list{
+ 
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.doctor-information-wrapper div .contanct-info-wrapper .Contanct-info-list li{
+  display:flex;
+  margin-bottom: 15px;
+
+}
+
+.doctor-information-wrapper div .contanct-info-wrapper .Contanct-info-list span{
+      margin-right: 8px;
+    font-weight: 600;
+    min-width: 70px;
+}
+.doctor-information-wrapper  .shedule-info-wrapper{
+  background-color: #f9fafc;
+  padding: 30px 20px;
+}
+.doctor-information-wrapper div .shedule-info-wrapper .shedule-info-border{
+  border: 1px solid var(--theme-colour-primary);
+  padding: 40px 0px;
+
+}
+
+
+.doctor-information-wrapper div .shedule-info-wrapper h4{
+  color: var(--theme-colour-primary);
+  font-size: 24px;
+  margin: 12px 20px;
+}
+.shedule-info-wrapper  .shedule-info-list{
+  list-style: none;
+}
+.shedule-info-wrapper .shedule-info-wrapper .shedule-info-list li{
+  display:flex;
+}
+
+.shedule-info-wrapper .shedule-info-list li  span{
+      margin-right: 80px;
+    min-width: 100px;
+    left: 0;
+    
+}
+.shedule-info-wrapper .shedule-info-list li.shedule-border-bottom{
+  border-bottom: 1px dotted gray ;
+  margin-bottom: 20px;
+  margin-top: 11px !important;
+
+}
+.doctor-details{
+  padding: 20px 20px;
+  background-color: #f9fafc;
+}
 

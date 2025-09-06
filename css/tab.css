@@ -1,0 +1,70 @@
+:root{
+
+    --theme-colour-primary:#0bb8b6;
+    --theme-primary-colour-rgb:rgba(11,184,182,255);
+    
+}
+
+
+
+/* navigation styles */
+
+.tabs {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 1rem;
+  border-bottom: 2px solid #ddd;
+  margin: 0;
+  margin-left: 30%;
+}
+
+.tabs .nav-link {
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  color: #555;
+  transition: color  ease;
+}
+
+.tabs .nav-link.active {
+  font-weight: bold;
+  color: var(--theme-colour-primary);
+  border-bottom: 2px solid var(--theme-colour-primary);
+  transition: all  ease;
+}
+
+/* tab content wrapper */
+.tab-contents {
+  margin-top: 1rem;
+  position: relative;
+}
+
+/* base state (hidden) */
+.tab-pane {
+  opacity: 0;
+  display: none;
+  transition: all 3s ease;
+}
+
+/* visible state (active) */
+.tab-pane.active {
+  display: block;
+  opacity: 1;
+}
+
+
+
+@media (max-width: 480px) {
+  h3 {
+    font-size: 20px;
+  }
+  .doctor-specialist li {
+    font-size: 13px;
+  }
+  .tabs li a {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+
+
