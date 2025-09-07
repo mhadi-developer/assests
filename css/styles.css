@@ -64,7 +64,15 @@ padding: 10px;
   color: #333 ;
     margin: 0px 4px;
 }
-
+.navbar-nav .nav-link a{
+  transition: all 0.3s ease;
+}
+@media screen and (max-width: 991px) {
+    .navbar-nav .nav-link a {
+        display: block;
+        padding: 8px 20px;
+    }
+}
 
 .navbar-nav .nav-link.active:hover {
     color: var(--theme-colour-primary);
