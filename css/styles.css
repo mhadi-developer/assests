@@ -8,6 +8,11 @@ body{
   width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+html{
+  scroll-behavior: smooth;
+  scrollbar-color: var(--theme-colour-primary);
 }
 
 @media screen and (max-width: 991px) {
@@ -319,6 +324,36 @@ text-align: center;
     fill: #9ea0a5;
     background-color: rgba(158, 160, 165, 0.1);
 }
+.departments-faculty .nav-item{
+  position: relative;
+}
+.departments-faculty .nav-item::after{
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: var(--theme-colour-primary);
+  transform: rotate(45deg) translate(-90%,-50%);
+  bottom: 90%;
+  left: 30%;
+   opacity: 0; 
+
+}
+.departments-faculty .nav-item a.nav-link{
+  z-index: 111;
+}
+.departments-faculty .nav-item.active{
+  
+}
+.departments-faculty .nav-item.active::after {
+  opacity: 1;
+  bottom: -37px; /* positions the diamond below the card */
+  transition: all 1s ease;
+  z-index: 1 ;
+  display: block;
+}
+
+
 .col-lg-6 .Discription span{
   color: var(--theme-colour-primary);
 }
@@ -940,3 +975,22 @@ font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
   background-color: #f9fafc;
 }
 
+
+
+.ns-gallary div .controls button{
+  border: none !important;
+  margin-left: 50px;
+}
+.ns-gallary div .controls button:hover{
+  color: var(--theme-colour-primary);
+  transition: all linear;
+}
+
+.ns-gallary .controls button.is-checked{
+  border: none;
+   border-bottom: 2px solid var(--theme-colour-primary) !important;
+   color: var(--theme-colour-primary);
+   transition: all 0.7s linear;
+   font-weight: bold;
+   border-radius: 0;
+}
