@@ -1196,6 +1196,9 @@ background: white;
     top: 6px;
     right: 0;
 }
+.blog-card{
+  margin-block:2vh;
+}
 .blog-card span{
   color: #b5b5b5;
   
